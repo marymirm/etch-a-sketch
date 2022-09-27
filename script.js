@@ -19,12 +19,11 @@ function makeBoard(size) {
 
     makeBoard(16);
 
-function changeSize (userInput) {
-    if (userInput >= 2 && userInput <= 100) {
-        makeBoard(userInput);
-        prompt('What size board do you want?');
+function changeSize (size) {
+    if (size >= 2 && size <= 100) {
+        makeBoard(size);
     } else {
-        console.log("too many squares")
+        alert("too many squares")
     }
 }    
 
@@ -32,9 +31,9 @@ function clearBoard() {
     let board = document.querySelector(".board");
     let box = board.querySelectorAll("div");
     box.forEach((div) => div.remove());
-
-    userInput = prompt('What size board do you want?');
-    makeBoard(userInput);
+    size = prompt('What size board do you want?');
+    changeSize(size);
+    //makeBoard(size);
     };
 
 
